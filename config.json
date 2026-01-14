@@ -1,0 +1,26 @@
+{
+    "IO": {
+        "input_dir": "/home/georgios-katranis/Projects/CogniSafe3D/datasets/lihra/collaboration/lidar/pointclouds",
+        "output_dir": "./lidar_data/augmented",
+        "num_workers": 4
+    },
+    "sampling": {
+        "mode": "count", 
+        "value": 50,
+        "seed": 42
+    },
+    "pipeline": [
+        {
+            "corruption": "random_dropout",
+            "params": { "rate": 0.2 }
+        },
+        {
+            "corruption": "scene_glare_noise",
+            "params": { "severity": 3 }
+        },
+        {
+            "corruption": "reduce_fov",
+            "params": { "fov_reduction": {"horizontal": 0.1} }
+        }
+    ]
+}

@@ -193,9 +193,10 @@ class LidarAugmenter:
         if rate <= 0.0:
             return cloud, mask
 
-        if pattern in ["ring", "line"]:
-            mask = self._create_ring_mask(cloud, rate, ring_col_idx)
-        elif pattern == "sector":
+        # Not implemented yet
+        # if pattern in ["ring", "line"]:
+            # mask = self._create_ring_mask(cloud, rate, ring_col_idx)
+        if pattern == "sector":
             mask = self._create_sector_mask(cloud, rate)
         elif pattern == "distance":
             mask = self._create_distance_mask(cloud, rate)

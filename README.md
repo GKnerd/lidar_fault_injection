@@ -19,7 +19,6 @@ Simulates "salt-and-pepper" noise or digital transmission errors.
 Stochastically removes a percentage of points across the entire cloud.
 
 ### Structured Dropout 
-- Ring/Line: Simulates a specific laser diode failure (e.g., a dead beam in a 64-channel sensor).
 - Sector: Simulates a physical blockage on the sensor cover (e.g., mud splatter blocking a 45° angle).
 - Distance: Simulates failure to detect objects at specific range bands.
 - Checkerboard: A synthetic pattern used to test model robustness against periodic data loss.

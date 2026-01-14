@@ -4,3 +4,5 @@ lidar_fi
 # cache
 __pycache__/
 
+# data
+lidar_data/

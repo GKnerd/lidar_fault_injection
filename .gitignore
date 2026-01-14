@@ -1,5 +1,6 @@
 # venv 
 lidar_fi
+.venv
 
 # cache
 __pycache__/

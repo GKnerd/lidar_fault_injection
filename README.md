@@ -20,3 +20,5 @@ simulate real-world failure cases.
 | **Sparse Scan** | Downsamples resolution by skipping points to simulate lower-end sensors. |
 
 --- 
+
+## Quick Start 

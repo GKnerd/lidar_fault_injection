@@ -2,8 +2,8 @@ import logging
 import json
 import numpy as np
 import open3d as o3d
-import os
 
+from datetime import datetime
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
 from tqdm import tqdm
@@ -20,10 +20,16 @@ class LidarInjector:
     Allows users to define experiments using Python code.
     """
     def __init__(self, input_dir, output_dir):
+        # Get current time: YYYY-MM-DD_HH-MM-SS
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        base_output = Path(output_dir)
+        timestamped_output_dir = base_output.parent / f"{base_output.name}_{timestamp}"
+
+        # Update the config with this new unique path
         self.config = {
             "io": {
                 "input_dir": input_dir,
-                "output_dir": output_dir,
+                "output_dir": str(timestamped_output_dir),
                 "num_workers": 4
             },
             "sampling": {
